@@ -2,34 +2,6 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
-import { Progress } from "@/components/ui/progress"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import {
   Brain,
   Upload,
@@ -68,18 +40,23 @@ export default function OnboardPage() {
   }
 
   return (
-    <div className="py-10">
+    <div className="py-10 px-4">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold tracking-tight">Create Your Cryptex Twin</h1>
-          <p className="mt-2 text-muted-foreground">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Create Your Cryptex Twin</h1>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">
             Follow the steps below to create your personalized AI twin on the blockchain
           </p>
         </div>
 
         <div className="mb-8">
-          <Progress value={progress} className="h-2" />
-          <div className="mt-2 flex justify-between text-xs text-muted-foreground">
+          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+            <div 
+              className="bg-blue-500 h-2 rounded-full transition-all duration-300 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          <div className="mt-2 flex justify-between text-xs text-gray-500 dark:text-gray-400">
             <span>Getting Started</span>
             <span>Personalization</span>
             <span>Finalization</span>
@@ -95,62 +72,62 @@ export default function OnboardPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="overflow-hidden border-2">
-                <div className="absolute inset-0 bg-gradient-to-br from-chart-1/10 via-transparent to-chart-2/10" />
-                <CardHeader className="relative text-center">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                    <Brain className="h-8 w-8 text-primary" />
+              <div className="relative overflow-hidden rounded-lg border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20" />
+                <div className="relative text-center p-6">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                    <Brain className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                   </div>
-                  <CardTitle className="text-2xl">Welcome to Cryptex</CardTitle>
-                  <CardDescription>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Welcome to Cryptex</h2>
+                  <p className="mt-2 text-gray-600 dark:text-gray-400">
                     Your journey to creating a digital twin begins here
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="relative space-y-4 text-center pb-0">
-                  <div className="mx-auto max-w-md space-y-1">
+                  </p>
+                </div>
+                <div className="relative space-y-4 px-6 pb-0">
+                  <div className="mx-auto max-w-md space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                        <Wallet className="h-4 w-4 text-primary" />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                        <Wallet className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                       </div>
                       <div className="text-left">
-                        <p className="font-medium">Connect Wallet</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-medium text-gray-900 dark:text-white">Connect Wallet</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
                           Link your blockchain wallet to own your AI twin
                         </p>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                        <User className="h-4 w-4 text-primary" />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                        <User className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                       </div>
                       <div className="text-left">
-                        <p className="font-medium">Customize Personality</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-medium text-gray-900 dark:text-white">Customize Personality</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
                           Define traits and characteristics for your AI twin
                         </p>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                        <Upload className="h-4 w-4 text-primary" />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                        <Upload className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                       </div>
                       <div className="text-left">
-                        <p className="font-medium">Upload Memories</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-medium text-gray-900 dark:text-white">Upload Memories</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
                           Add personal data to train your AI twin
                         </p>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                        <Sparkles className="h-4 w-4 text-primary" />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+                        <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                       </div>
                       <div className="text-left">
-                        <p className="font-medium">Mint NFT</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-medium text-gray-900 dark:text-white">Mint NFT</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
                           Create your unique Cryptex Soul NFT on the blockchain
                         </p>
                       </div>
@@ -158,28 +135,26 @@ export default function OnboardPage() {
                   </div>
                   
                   <div className="relative mx-auto mt-8 aspect-video w-full max-w-lg overflow-hidden rounded-t-lg">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Image
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-400 to-purple-500">
+                      <img
                         src="https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg"
                         alt="Cryptex AI Platform"
-                        fill
-                        className="object-cover"
+                        className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                     </div>
                   </div>
-                </CardContent>
-                <CardFooter className="relative block bg-card p-6 text-center">
-                  <Button
-                    size="lg"
+                </div>
+                <div className="relative bg-white dark:bg-gray-800 p-6 text-center">
+                  <button
+                    className="inline-flex items-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
                     onClick={() => goToNextStep("welcome")}
-                    className="px-8"
                   >
                     Begin Journey
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardFooter>
-              </Card>
+                  </button>
+                </div>
+              </div>
             </motion.div>
           )}
 
@@ -191,14 +166,14 @@ export default function OnboardPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Connect Your Wallet</CardTitle>
-                  <CardDescription>
+              <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg">
+                <div className="p-6">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white">Connect Your Wallet</h2>
+                  <p className="mt-1 text-gray-600 dark:text-gray-400">
                     Connect your Web3 wallet to create and own your Cryptex twin
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
+                  </p>
+                </div>
+                <div className="p-6 pt-0">
                   <div className="grid gap-6">
                     <div className="grid gap-4">
                       {[
@@ -209,49 +184,55 @@ export default function OnboardPage() {
                       ].map((wallet) => (
                         <div
                           key={wallet.name}
-                          className="flex cursor-pointer items-center justify-between rounded-lg border p-4 transition-colors hover:bg-accent"
+                          className="flex cursor-pointer items-center justify-between rounded-lg border border-gray-200 dark:border-gray-700 p-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-700"
                         >
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
                               <span className="text-lg">{wallet.icon}</span>
                             </div>
                             <div>
-                              <p className="font-medium">{wallet.name}</p>
-                              <p className="text-sm text-muted-foreground">
+                              <p className="font-medium text-gray-900 dark:text-white">{wallet.name}</p>
+                              <p className="text-sm text-gray-600 dark:text-gray-400">
                                 {wallet.description}
                               </p>
                             </div>
                           </div>
-                          <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                          <ChevronRight className="h-5 w-5 text-gray-400" />
                         </div>
                       ))}
                     </div>
                     
                     <div>
-                      <p className="text-sm text-muted-foreground text-center">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
                         By connecting your wallet, you agree to our{" "}
-                        <Link href="/terms" className="text-primary underline underline-offset-4">
+                        <span className="text-blue-600 dark:text-blue-400 underline underline-offset-4 cursor-pointer">
                           Terms of Service
-                        </Link>{" "}
+                        </span>{" "}
                         and{" "}
-                        <Link href="/privacy" className="text-primary underline underline-offset-4">
+                        <span className="text-blue-600 dark:text-blue-400 underline underline-offset-4 cursor-pointer">
                           Privacy Policy
-                        </Link>
+                        </span>
                         .
                       </p>
                     </div>
                   </div>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline" onClick={() => setCurrentStep("welcome")}>
+                </div>
+                <div className="flex justify-between p-6 pt-0">
+                  <button 
+                    className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    onClick={() => setCurrentStep("welcome")}
+                  >
                     Back
-                  </Button>
-                  <Button onClick={() => goToNextStep("connect-wallet")}>
+                  </button>
+                  <button 
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                    onClick={() => goToNextStep("connect-wallet")}
+                  >
                     <Shield className="mr-2 h-4 w-4" />
                     Continue
-                  </Button>
-                </CardFooter>
-              </Card>
+                  </button>
+                </div>
+              </div>
             </motion.div>
           )}
 
@@ -263,138 +244,96 @@ export default function OnboardPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Define Your Twin's Personality</CardTitle>
-                  <CardDescription>
+              <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg">
+                <div className="p-6">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white">Define Your Twin's Personality</h2>
+                  <p className="mt-1 text-gray-600 dark:text-gray-400">
                     Customize how your AI twin thinks, speaks, and responds
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
+                  </p>
+                </div>
+                <div className="p-6 pt-0">
                   <div className="grid gap-6">
                     <div className="grid gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="twin-name">Name Your Twin</Label>
-                        <Input id="twin-name" placeholder="e.g., Alex, Cryptex-1, etc." />
+                        <label className="text-sm font-medium text-gray-900 dark:text-white">Name Your Twin</label>
+                        <input 
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="e.g., Alex, Cryptex-1, etc." 
+                        />
                       </div>
                       
                       <div className="space-y-2">
-                        <Label htmlFor="description">Brief Description</Label>
-                        <Textarea 
-                          id="description" 
+                        <label className="text-sm font-medium text-gray-900 dark:text-white">Brief Description</label>
+                        <textarea 
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[100px]"
                           placeholder="Describe your twin's personality in a few sentences..."
-                          className="min-h-[100px]"
                         />
                       </div>
 
-                      <Tabs defaultValue="traits">
-                        <TabsList className="w-full grid grid-cols-2">
-                          <TabsTrigger value="traits">Personality Traits</TabsTrigger>
-                          <TabsTrigger value="advanced">Advanced Settings</TabsTrigger>
-                        </TabsList>
-                        
-                        <TabsContent value="traits" className="space-y-4 pt-4">
-                          <div className="grid gap-4 sm:grid-cols-2">
-                            <div className="space-y-2">
-                              <Label>Communication Style</Label>
-                              <Select defaultValue="balanced">
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select style" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  <SelectItem value="formal">Formal</SelectItem>
-                                  <SelectItem value="casual">Casual</SelectItem>
-                                  <SelectItem value="balanced">Balanced</SelectItem>
-                                  <SelectItem value="technical">Technical</SelectItem>
-                                  <SelectItem value="creative">Creative</SelectItem>
-                                </SelectContent>
-                              </Select>
-                            </div>
-                            
-                            <div className="space-y-2">
-                              <Label>Personality Type</Label>
-                              <Select defaultValue="balanced">
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select type" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  <SelectItem value="analytical">Analytical</SelectItem>
-                                  <SelectItem value="creative">Creative</SelectItem>
-                                  <SelectItem value="empathetic">Empathetic</SelectItem>
-                                  <SelectItem value="balanced">Balanced</SelectItem>
-                                  <SelectItem value="logical">Logical</SelectItem>
-                                </SelectContent>
-                              </Select>
-                            </div>
+                      <div className="space-y-4">
+                        <div className="grid gap-4 sm:grid-cols-2">
+                          <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-900 dark:text-white">Communication Style</label>
+                            <select className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                              <option value="formal">Formal</option>
+                              <option value="casual">Casual</option>
+                              <option value="balanced" selected>Balanced</option>
+                              <option value="technical">Technical</option>
+                              <option value="creative">Creative</option>
+                            </select>
                           </div>
                           
                           <div className="space-y-2">
-                            <Label>Interests & Expertise</Label>
-                            <div className="grid gap-2 sm:grid-cols-2">
-                              {[
-                                "Technology", "Art & Design", "Science", "Business", 
-                                "Philosophy", "Health", "Entertainment", "Sports"
-                              ].map((interest) => (
-                                <div key={interest} className="flex items-center space-x-2">
-                                  <input type="checkbox" id={interest} className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary" />
-                                  <Label htmlFor={interest} className="text-sm font-normal">
-                                    {interest}
-                                  </Label>
-                                </div>
-                              ))}
-                            </div>
+                            <label className="text-sm font-medium text-gray-900 dark:text-white">Personality Type</label>
+                            <select className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                              <option value="analytical">Analytical</option>
+                              <option value="creative">Creative</option>
+                              <option value="empathetic">Empathetic</option>
+                              <option value="balanced" selected>Balanced</option>
+                              <option value="logical">Logical</option>
+                            </select>
                           </div>
-                        </TabsContent>
+                        </div>
                         
-                        <TabsContent value="advanced" className="space-y-4 pt-4">
-                          <div className="grid gap-4">
-                            <div className="space-y-2">
-                              <Label>Memory Retention</Label>
-                              <Select defaultValue="balanced">
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select level" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  <SelectItem value="high">High - Remember most details</SelectItem>
-                                  <SelectItem value="balanced">Balanced - Focus on key points</SelectItem>
-                                  <SelectItem value="selective">Selective - Only important memories</SelectItem>
-                                </SelectContent>
-                              </Select>
-                            </div>
-                            
-                            <div className="space-y-2">
-                              <Label>Response Length</Label>
-                              <Select defaultValue="medium">
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Select length" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  <SelectItem value="concise">Concise - Brief responses</SelectItem>
-                                  <SelectItem value="medium">Medium - Balanced responses</SelectItem>
-                                  <SelectItem value="detailed">Detailed - Thorough explanations</SelectItem>
-                                </SelectContent>
-                              </Select>
-                            </div>
-                            
-                            <div className="space-y-2">
-                              <Label htmlFor="language">Primary Language</Label>
-                              <Input id="language" defaultValue="English" />
-                            </div>
+                        <div className="space-y-2">
+                          <label className="text-sm font-medium text-gray-900 dark:text-white">Interests & Expertise</label>
+                          <div className="grid gap-2 sm:grid-cols-2">
+                            {[
+                              "Technology", "Art & Design", "Science", "Business", 
+                              "Philosophy", "Health", "Entertainment", "Sports"
+                            ].map((interest) => (
+                              <div key={interest} className="flex items-center space-x-2">
+                                <input 
+                                  type="checkbox" 
+                                  id={interest} 
+                                  className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" 
+                                />
+                                <label htmlFor={interest} className="text-sm text-gray-900 dark:text-white">
+                                  {interest}
+                                </label>
+                              </div>
+                            ))}
                           </div>
-                        </TabsContent>
-                      </Tabs>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline" onClick={() => setCurrentStep("connect-wallet")}>
+                </div>
+                <div className="flex justify-between p-6 pt-0">
+                  <button 
+                    className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    onClick={() => setCurrentStep("connect-wallet")}
+                  >
                     Back
-                  </Button>
-                  <Button onClick={() => goToNextStep("personality")}>
+                  </button>
+                  <button 
+                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                    onClick={() => goToNextStep("personality")}
+                  >
                     Continue
-                  </Button>
-                </CardFooter>
-              </Card>
+                  </button>
+                </div>
+              </div>
             </motion.div>
           )}
 
@@ -406,106 +345,79 @@ export default function OnboardPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Upload Training Data</CardTitle>
-                  <CardDescription>
+              <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg">
+                <div className="p-6">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white">Upload Training Data</h2>
+                  <p className="mt-1 text-gray-600 dark:text-gray-400">
                     Provide information to help your AI twin learn about you
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
+                  </p>
+                </div>
+                <div className="p-6 pt-0">
                   <div className="grid gap-6">
-                    <div className="rounded-lg border border-dashed p-10 text-center">
-                      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-muted">
-                        <Upload className="h-6 w-6 text-muted-foreground" />
+                    <div className="rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 p-10 text-center">
+                      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
+                        <Upload className="h-6 w-6 text-gray-600 dark:text-gray-400" />
                       </div>
-                      <h3 className="mt-4 text-lg font-medium">Upload Files</h3>
-                      <p className="mt-2 text-sm text-muted-foreground">
+                      <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-white">Upload Files</h3>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
                         Drag and drop files or click to browse
                       </p>
-                      <p className="mt-1 text-xs text-muted-foreground">
+                      <p className="mt-1 text-xs text-gray-500 dark:text-gray-500">
                         Supported formats: PDF, TXT, DOCX, MD (Max 10MB)
                       </p>
-                      <Button variant="outline" className="mt-4">
+                      <button className="mt-4 inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                         <Upload className="mr-2 h-4 w-4" />
                         Select Files
-                      </Button>
+                      </button>
                     </div>
                     
                     <div className="space-y-4">
-                      <h3 className="text-lg font-medium">Or Add Information Directly</h3>
+                      <h3 className="text-lg font-medium text-gray-900 dark:text-white">Or Add Information Directly</h3>
                       
-                      <Tabs defaultValue="personal">
-                        <TabsList className="w-full grid grid-cols-3">
-                          <TabsTrigger value="personal">Personal</TabsTrigger>
-                          <TabsTrigger value="preferences">Preferences</TabsTrigger>
-                          <TabsTrigger value="experiences">Experiences</TabsTrigger>
-                        </TabsList>
-                        
-                        <TabsContent value="personal" className="space-y-4 pt-4">
+                      <div className="space-y-4">
+                        <div className="space-y-2">
+                          <label className="text-sm font-medium text-gray-900 dark:text-white">Bio & Background</label>
+                          <textarea 
+                            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[120px]"
+                            placeholder="Share details about yourself, your background, and your story..."
+                          />
+                        </div>
+                        <div className="grid gap-4 sm:grid-cols-2">
                           <div className="space-y-2">
-                            <Label htmlFor="bio">Bio & Background</Label>
-                            <Textarea 
-                              id="bio" 
-                              placeholder="Share details about yourself, your background, and your story..."
-                              className="min-h-[120px]"
-                            />
-                          </div>
-                          <div className="grid gap-4 sm:grid-cols-2">
-                            <div className="space-y-2">
-                              <Label htmlFor="education">Education</Label>
-                              <Input id="education" placeholder="Your education history" />
-                            </div>
-                            <div className="space-y-2">
-                              <Label htmlFor="occupation">Occupation</Label>
-                              <Input id="occupation" placeholder="Your current role" />
-                            </div>
-                          </div>
-                        </TabsContent>
-                        
-                        <TabsContent value="preferences" className="space-y-4 pt-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="interests">Interests & Hobbies</Label>
-                            <Textarea 
-                              id="interests" 
-                              placeholder="What are you passionate about?"
-                              className="min-h-[100px]"
+                            <label className="text-sm font-medium text-gray-900 dark:text-white">Education</label>
+                            <input 
+                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              placeholder="Your education history" 
                             />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="values">Core Values</Label>
-                            <Textarea 
-                              id="values" 
-                              placeholder="What principles guide your decisions?"
-                              className="min-h-[100px]"
+                            <label className="text-sm font-medium text-gray-900 dark:text-white">Occupation</label>
+                            <input 
+                              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              placeholder="Your current role" 
                             />
                           </div>
-                        </TabsContent>
-                        
-                        <TabsContent value="experiences" className="space-y-4 pt-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="experiences">Key Life Experiences</Label>
-                            <Textarea 
-                              id="experiences" 
-                              placeholder="Share formative experiences that have shaped who you are..."
-                              className="min-h-[150px]"
-                            />
-                          </div>
-                        </TabsContent>
-                      </Tabs>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline" onClick={() => setCurrentStep("personality")}>
+                </div>
+                <div className="flex justify-between p-6 pt-0">
+                  <button 
+                    className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    onClick={() => setCurrentStep("personality")}
+                  >
                     Back
-                  </Button>
-                  <Button onClick={() => goToNextStep("upload")}>
+                  </button>
+                  <button 
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                    onClick={() => goToNextStep("upload")}
+                  >
                     <FileText className="mr-2 h-4 w-4" />
                     Continue
-                  </Button>
-                </CardFooter>
-              </Card>
+                  </button>
+                </div>
+              </div>
             </motion.div>
           )}
 
@@ -517,103 +429,110 @@ export default function OnboardPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Review Your Cryptex Twin</CardTitle>
-                  <CardDescription>
+              <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg">
+                <div className="p-6">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white">Review Your Cryptex Twin</h2>
+                  <p className="mt-1 text-gray-600 dark:text-gray-400">
                     Verify the details before minting your AI twin as an NFT
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
+                  </p>
+                </div>
+                <div className="p-6 pt-0">
                   <div className="grid gap-6 md:grid-cols-2">
                     <div>
-                      <h3 className="mb-4 text-lg font-medium">Personality Profile</h3>
-                      <div className="rounded-lg border p-4 space-y-3">
+                      <h3 className="mb-4 text-lg font-medium text-gray-900 dark:text-white">Personality Profile</h3>
+                      <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 space-y-3">
                         <div className="flex justify-between">
-                          <span className="text-sm text-muted-foreground">Name</span>
-                          <span className="text-sm font-medium">Cryptex Twin</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Name</span>
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">Cryptex Twin</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-sm text-muted-foreground">Communication Style</span>
-                          <span className="text-sm font-medium">Balanced</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Communication Style</span>
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">Balanced</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-sm text-muted-foreground">Personality Type</span>
-                          <span className="text-sm font-medium">Balanced</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Personality Type</span>
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">Balanced</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-sm text-muted-foreground">Memory Retention</span>
-                          <span className="text-sm font-medium">High</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Memory Retention</span>
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">High</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-sm text-muted-foreground">Primary Language</span>
-                          <span className="text-sm font-medium">English</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Primary Language</span>
+                          <span className="text-sm font-medium text-gray-900 dark:text-white">English</span>
                         </div>
                       </div>
                       
-                      <h3 className="mb-4 mt-6 text-lg font-medium">Training Data</h3>
-                      <div className="rounded-lg border p-4 space-y-3">
+                      <h3 className="mb-4 mt-6 text-lg font-medium text-gray-900 dark:text-white">Training Data</h3>
+                      <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4 space-y-3">
                         <div className="flex justify-between">
-                          <span className="text-sm text-muted-foreground">Personal Information</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Personal Information</span>
                           <CheckCircle2 className="h-4 w-4 text-green-500" />
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-sm text-muted-foreground">Preferences & Interests</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Preferences & Interests</span>
                           <CheckCircle2 className="h-4 w-4 text-green-500" />
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-sm text-muted-foreground">Uploaded Documents</span>
-                          <span className="text-sm">3 files</span>
+                          <span className="text-sm text-gray-600 dark:text-gray-400">Uploaded Documents</span>
+                          <span className="text-sm text-gray-900 dark:text-white">3 files</span>
                         </div>
                       </div>
                     </div>
                     
                     <div>
-                      <h3 className="mb-4 text-lg font-medium">Preview</h3>
-                      <div className="rounded-lg border p-4">
-                        <div className="aspect-square overflow-hidden rounded-lg bg-muted relative">
-                          <div className="absolute inset-0 bg-gradient-to-br from-chart-1/30 via-chart-2/20 to-chart-3/30 animate-pulse" />
+                      <h3 className="mb-4 text-lg font-medium text-gray-900 dark:text-white">Preview</h3>
+                      <div className="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <div className="aspect-square overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700 relative">
+                          <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200 dark:from-blue-800 dark:via-purple-800 dark:to-pink-800 animate-pulse" />
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <Brain className="h-20 w-20 text-primary/70" />
+                            <Brain className="h-20 w-20 text-blue-600 dark:text-blue-400 opacity-70" />
                           </div>
-                          <div className="absolute bottom-0 w-full bg-background/80 p-2 text-center text-sm font-medium backdrop-blur-sm">
+                          <div className="absolute bottom-0 w-full bg-white/80 dark:bg-gray-800/80 p-2 text-center text-sm font-medium backdrop-blur-sm">
                             Cryptex #1024
                           </div>
                         </div>
                         
                         <div className="mt-4 space-y-2">
                           <div className="flex justify-between">
-                            <span className="text-sm text-muted-foreground">Network</span>
-                            <span className="text-sm font-medium">Polygon</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-400">Network</span>
+                            <span className="text-sm font-medium text-gray-900 dark:text-white">Polygon</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-sm text-muted-foreground">Standard</span>
-                            <span className="text-sm font-medium">ERC-721</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-400">Standard</span>
+                            <span className="text-sm font-medium text-gray-900 dark:text-white">ERC-721</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-sm text-muted-foreground">Est. Gas Fee</span>
-                            <span className="text-sm font-medium">~0.0005 ETH</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-400">Est. Gas Fee</span>
+                            <span className="text-sm font-medium text-gray-900 dark:text-white">~0.0005 ETH</span>
                           </div>
                         </div>
                       </div>
                       
-                      <div className="mt-6 rounded-lg border border-amber-200/20 bg-amber-50/10 p-4 text-sm text-amber-900 dark:text-amber-200">
+                      <div className="mt-6 rounded-lg border border-yellow-200 dark:border-yellow-800 bg-yellow-50 dark:bg-yellow-900/20 p-4 text-sm text-yellow-800 dark:text-yellow-200">
                         <p>
                           By proceeding, you're creating a unique digital identity stored on the blockchain. Your private data remains encrypted and secure.
                         </p>
                       </div>
                     </div>
                   </div>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline" onClick={() => setCurrentStep("upload")}>
+                </div>
+                <div className="flex justify-between p-6 pt-0">
+                  <button 
+                    className="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    onClick={() => setCurrentStep("upload")}
+                  >
                     Back
-                  </Button>
-                  <Button onClick={() => goToNextStep("review")}>
-                    Continue to Mint
-                  </Button>
-                </CardFooter>
-              </Card>
+                  </button>
+                  <button 
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                    onClick={() => goToNextStep("review")}
+                  >
+                    <Sparkles className="mr-2 h-4 w-4" />
+                    Mint NFT
+                  </button>
+                </div>
+              </div>
             </motion.div>
           )}
 
@@ -625,104 +544,67 @@ export default function OnboardPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-chart-1/10 via-transparent to-chart-2/10" />
-                <CardHeader className="relative text-center">
-                  <CardTitle className="text-2xl">Mint Your Cryptex Twin NFT</CardTitle>
-                  <CardDescription>
-                    Your AI twin is ready to be tokenized on the blockchain
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="relative">
-                  <div className="mx-auto mb-8 max-w-sm text-center">
-                    <div className="aspect-square overflow-hidden rounded-lg bg-muted relative mx-auto">
-                      <div className="absolute inset-0 bg-gradient-to-br from-chart-1/30 via-chart-2/20 to-chart-3/30 animate-pulse" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Brain className="h-24 w-24 text-primary/70" />
-                      </div>
-                      <div className="absolute bottom-0 w-full bg-background/80 p-2 text-center text-sm font-medium backdrop-blur-sm">
-                        Cryptex #1024
-                      </div>
+              <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-lg">
+                <div className="p-6">
+                  <h2 className="text-xl font-bold text-gray-900 dark:text-white">Mint Your Cryptex Soul</h2>
+                  <p className="mt-1 text-gray-600 dark:text-gray-400">
+                    Creating your unique AI twin NFT on the blockchain
+                  </p>
+                </div>
+                <div className="p-6 pt-0">
+                  <div className="text-center">
+                    <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900">
+                      <Sparkles className="h-12 w-12 text-blue-600 dark:text-blue-400 animate-pulse" />
                     </div>
                     
-                    <div className="mt-6 space-y-2 text-sm">
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="rounded-md bg-muted p-2">
-                          <p className="text-muted-foreground">Network</p>
-                          <p className="font-medium">Polygon</p>
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="h-2 w-2 rounded-full bg-blue-600 animate-bounce" />
+                        <div className="h-2 w-2 rounded-full bg-blue-600 animate-bounce" style={{ animationDelay: '0.1s' }} />
+                        <div className="h-2 w-2 rounded-full bg-blue-600 animate-bounce" style={{ animationDelay: '0.2s' }} />
+                      </div>
+                      
+                      <h3 className="text-lg font-medium text-gray-900 dark:text-white">Minting in Progress...</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Your Cryptex twin is being created and secured on the blockchain
+                      </p>
+                      
+                      <div className="mx-auto max-w-md space-y-3 text-left">
+                        <div className="flex items-center space-x-3">
+                          <CheckCircle2 className="h-5 w-5 text-green-500" />
+                          <span className="text-sm text-gray-900 dark:text-white">Personality profile processed</span>
                         </div>
-                        <div className="rounded-md bg-muted p-2">
-                          <p className="text-muted-foreground">Type</p>
-                          <p className="font-medium">ERC-721</p>
+                        <div className="flex items-center space-x-3">
+                          <CheckCircle2 className="h-5 w-5 text-green-500" />
+                          <span className="text-sm text-gray-900 dark:text-white">Training data encrypted</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <CheckCircle2 className="h-5 w-5 text-green-500" />
+                          <span className="text-sm text-gray-900 dark:text-white">AI model initialized</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="h-5 w-5 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" />
+                          <span className="text-sm text-gray-900 dark:text-white">Minting NFT...</span>
                         </div>
                       </div>
                       
-                      <div className="rounded-md border p-3">
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Est. Gas Fee</span>
-                          <span className="font-medium">~0.0005 ETH</span>
-                        </div>
-                        <div className="flex justify-between mt-1">
-                          <span className="text-muted-foreground">Your Balance</span>
-                          <span className="font-medium">1.245 ETH</span>
-                        </div>
+                      <div className="mt-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700 p-4">
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                          Transaction Hash: 0x1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z
+                        </p>
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="rounded-lg border p-4 bg-card">
-                    <h3 className="mb-4 font-medium">Ownership Benefits</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5" />
-                        <div>
-                          <p className="font-medium">Full Ownership</p>
-                          <p className="text-sm text-muted-foreground">
-                            You are the sole owner of your digital identity, secured on the blockchain
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5" />
-                        <div>
-                          <p className="font-medium">Unlimited Access</p>
-                          <p className="text-sm text-muted-foreground">
-                            Interact with your AI twin anytime with no usage limits
-                          </p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5" />
-                        <div>
-                          <p className="font-medium">Memory Encryption</p>
-                          <p className="text-sm text-muted-foreground">
-                            Your personal data is securely encrypted and only accessible by you
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="relative flex justify-between">
-                  <Button variant="outline" onClick={() => setCurrentStep("review")}>
-                    Back
-                  </Button>
-                  <Button
-                    className="bg-gradient-to-r from-chart-1 to-chart-2 text-white"
-                    onClick={() => {
-                      // In a real app, this would trigger the wallet transaction
-                      setTimeout(() => {
-                        window.location.href = "/dashboard";
-                      }, 1500);
-                    }}
+                </div>
+                <div className="flex justify-center p-6 pt-0">
+                  <button 
+                    className="px-6 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    disabled
                   >
-                    <Sparkles className="mr-2 h-4 w-4" />
-                    Mint Cryptex NFT
-                  </Button>
-                </CardFooter>
-              </Card>
+                    Please wait...
+                  </button>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
