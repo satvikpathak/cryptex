@@ -88,8 +88,8 @@ export default function MarketplacePage() {
   const [activeTab, setActiveTab] = useState("explore")
 
   return (
-    <div className="container py-10">
-      <div className="mb-8 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+    <div className=" py-10 w-full">
+      <div className="mb-8 flex flex-col gap-2 md:flex-row md:items-center md:justify-evenly">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Marketplace</h1>
           <p className="text-muted-foreground">

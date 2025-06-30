@@ -68,7 +68,7 @@ export default function OnboardPage() {
   }
 
   return (
-    <div className="container py-10">
+    <div className="py-10">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight">Create Your Cryptex Twin</h1>

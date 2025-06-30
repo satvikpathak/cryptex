@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { 
   Brain, 
   ArrowRight, 
-  LucideShieldCheck, 
+  ShieldCheck, 
   MessageSquare, 
   Fingerprint,
   Zap 
@@ -15,14 +15,14 @@ import Image from "next/image"
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(120,80,255,0.12),transparent_50%)]" />
-        <div className="absolute top-0 right-0 -z-10 h-64 w-64 rounded-full bg-chart-1/20 blur-3xl" />
-        <div className="absolute bottom-0 left-0 -z-10 h-64 w-64 rounded-full bg-chart-2/20 blur-3xl" />
+        <div className="absolute top-0 right-0 -z-10 h-64 w-64 rounded-full bg-purple-500/20 blur-3xl" />
+        <div className="absolute bottom-0 left-0 -z-10 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
 
-        <div className="container relative py-24 md:py-32">
+        <div className="container mx-auto px-4 relative py-24 md:py-32">
           <div className="mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -37,11 +37,11 @@ export default function Home() {
               </div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                 Your AI Twin on the{" "}
-                <span className="bg-gradient-to-r from-chart-1 via-chart-2 to-chart-4 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-purple-400 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
                   Blockchain
                 </span>
               </h1>
-              <p className="mt-6 text-lg text-muted-foreground md:text-xl">
+              <p className="mt-6 text-lg text-muted-foreground md:text-xl max-w-3xl mx-auto">
                 Train, tokenize, and own your digital identity powered by AI and stored immutably on the blockchain.
                 Create a digital extension of yourself that learns and evolves.
               </p>
@@ -52,7 +52,7 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" asChild>
                   <Link href="/marketplace">
                     Explore Marketplace
                   </Link>
@@ -66,7 +66,7 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="relative mt-20"
             >
-              <div className="relative mx-auto aspect-video overflow-hidden rounded-xl border bg-background/50 shadow-xl backdrop-blur">
+              <div className="relative mx-auto max-w-4xl aspect-video overflow-hidden rounded-xl border bg-background/50 shadow-xl backdrop-blur">
                 <div className="absolute inset-0 bg-gradient-to-tr from-background/10 to-background/5" />
                 <Image
                   src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="py-20 bg-background/50">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               The future of digital identity
@@ -106,7 +106,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-xl border bg-card/50 p-6 backdrop-blur transition-colors hover:bg-card"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-chart-1/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                 <Brain className="h-5 w-5 text-primary" />
               </div>
@@ -123,7 +123,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-xl border bg-card/50 p-6 backdrop-blur transition-colors hover:bg-card"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-chart-2/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                 <MessageSquare className="h-5 w-5 text-primary" />
               </div>
@@ -140,9 +140,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-xl border bg-card/50 p-6 backdrop-blur transition-colors hover:bg-card"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-chart-3/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                <LucideShieldCheck className="h-5 w-5 text-primary" />
+                <ShieldCheck className="h-5 w-5 text-primary" />
               </div>
               <h3 className="mb-2 text-xl font-bold">NFT Ownership</h3>
               <p className="text-muted-foreground">
@@ -157,7 +157,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-xl border bg-card/50 p-6 backdrop-blur transition-colors hover:bg-card"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-chart-4/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-green-500/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                 <Fingerprint className="h-5 w-5 text-primary" />
               </div>
@@ -174,7 +174,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-xl border bg-card/50 p-6 backdrop-blur transition-colors hover:bg-card"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-chart-5/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                 <Zap className="h-5 w-5 text-primary" />
               </div>
@@ -191,7 +191,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-xl border bg-card/50 p-6 backdrop-blur transition-colors hover:bg-card"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-chart-1/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
                 <svg
                   width="20"
@@ -221,7 +221,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="relative py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,80,255,0.08),transparent_50%)]" />
-        <div className="container">
+        <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl rounded-2xl border bg-card/30 p-8 shadow-lg backdrop-blur-sm md:p-12">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight">
@@ -242,6 +242,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }
